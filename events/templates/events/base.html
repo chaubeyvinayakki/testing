@@ -1,0 +1,85 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<title>Django store | {% block title %}{% endblock %}</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  <style>
+body {margin: 0;}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #111;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: red;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: #4EB1BA;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right,
+    ul.topnav li {float: none;}
+}
+</style>
+</head>
+
+<body style=" background-color: skyblue;">
+
+
+  <ul class="topnav">
+
+    <li><a style="color:orange",class="active" href="">Home</a> | {% if user.is_authenticated %}
+    welcome {{ user.username }} </li>
+
+
+    <li><a style="color:Orange" class="active",href="events/logout">Logout</a></li>
+
+
+    {% else %}
+    <li><a href="/login/">Login</a></li>
+    <li class="left"><a href="/register/">Register</a></li>
+    {% endif %}
+  </ul>
+
+
+
+
+  {% load static %}
+  <center><img src="{% static "events/Event.jpg" %}" alt="My image"/></center>
+
+
+<h1>{% block head %}{% endblock %}</h1>
+{% block content %}
+
+
+
+
+
+
+{% endblock %}
+</body>
+</html>

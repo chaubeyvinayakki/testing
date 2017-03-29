@@ -1,0 +1,29 @@
+
+{% extends 'events/base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<html>
+<body>
+
+<form method="post" action="">
+<center>
+<h1 style="color:blue"><u>Event Create</u></h1>
+<br>
+<br>
+<h2><b> Create your Event </b><h2>
+<div>
+
+{{form.as_p}}
+</div>
+<div>
+  <input type="submit" value="Submit">
+</div>
+</center>
+</form>
+
+</body>
+</html>
+{% endblock %}

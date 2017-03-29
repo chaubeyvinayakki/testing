@@ -1,0 +1,19 @@
+
+
+
+{% extends "events/base.html" %}
+{% block title %}User Registration{% endblock %}
+{% block head %}User Registration{% endblock %}
+{% block content %}
+
+<br>
+<br>
+<form method="post" action=".">
+  <center>
+   {% csrf_token %}
+   {{ form.as_p }}
+   <br>
+<pre>               <input type="submit" value="Register" /></pre>
+</center>
+</form>
+{% endblock %}

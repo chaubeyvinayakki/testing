@@ -1,0 +1,17 @@
+{% extends 'events/base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<form>
+  <center>
+  <h2 style="color:blue">Login</h2>
+  <br>
+  <br>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </center>
+  </form>
+{% endblock %}

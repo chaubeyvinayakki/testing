@@ -1,0 +1,54 @@
+
+
+
+<!--DOCTYPE html -->
+
+<!-- <html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<body style=" background-color: lightblue;"> -->
+{% extends "events/base.html" %}
+{% block title %}<div class="jumbotron text-center">
+<h1 style="text-align: center;">{{title}}</h1></div>
+<div style="background-color:yellow;padding:10px;border:2px solid grey;">{% endblock %}
+{% block head %}{% endblock %}
+{% block content %}
+
+<div class="jumbotron text-center">
+<h1 style="text-align: center;">{{title}}</h1></div>
+<div style="background-color:linen;padding:10px;border:2px solid grey;">
+
+<table rules="all" style="width:100%;text-align: center;border:4px magenta;color:marron">
+<tr class="container" style="text-align: center;">
+  <th style="text-align: center;">Event Name</th>
+  <th style="text-align: center;">Event Date</th>
+  <th style="text-align: center;">Duration</th>
+  <th style="text-align: center;">Address</th>
+
+</tr>
+{% for obj in event_list %}
+<tr class="container">
+  <td>{{obj.event_name}}</td>
+  <td>{{obj.date_time}}</td>
+  <td>{{obj.duration}}</td>
+  <td>{{obj.address}}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+{% endblock %}
+
+
+
+
+
+<!-- </body>
+</html> -->
